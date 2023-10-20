@@ -1,0 +1,55 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "FIXME_PROJECTNAME"
+version = "0.1.0"
+description = "FIXME_PROJECTDESCRIPTION"
+authors = [
+    { name = "FIXME_NAME", email = "FIXME_EMAIL" }
+]
+readme = "README.md"
+license = {file = "LICENSE"}
+requires-python = "==3.11.6"
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "pre-commit==3.5.0"
+]
+dev-lint = [
+    "ruff==0.1.1",
+    "black==23.10.0",
+    "mypy==1.6.1"
+]
+
+[tool.ruff]
+src = ["src"]
+fix = true
+show-fixes = true
+extend-select = [
+    "RUF",  # Ruff
+    "PL",   # PyLint
+    "N",    # pep8-naming
+    "E",    # pycodestyle errors
+    "W",    # pycodestyle warning
+    "I",    # isort
+    "UP",   # pyupgrade
+    "S",    # flake8-bandit
+    "B",    # flake8-bugbear
+    "C4",   # flake8-comprehensions
+    "RET",  # flake8-return
+    "SIM",  # flake8-simplify
+    "TCH",  # flake8-type-checking
+    "TID",  # flake8-tidy-imports
+]
+
+[tool.ruff.isort]
+case-sensitive = true
+known-first-party = ["FIXME_PROJECTNAME"]
+
+[tool.mypy]
+strict = true
+show_error_codes = true
+explicit_package_bases = true
